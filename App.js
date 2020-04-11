@@ -1,15 +1,17 @@
 import React, { useState, setState } from 'react';
 import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import Square from './components/Square';
+import RejectionButton from './components/RejectionButton';
+import Header from './components/Header'
 
 export default function App() {
 
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [isCurrentlyX, setIsCurrentlyX] = useState(true);
 
-  const renderSquare = index => <Square value={squares[index]} onClick={() => xClick(index)}/>
+  const renderSquare = index => <Square value={squares[index]} onPress={() => ticTacToeClick(index)}/>
 
-  const xClick = index => {
+  const ticTacToeClick = index => {
     if (squares[index] != null || winner != null) {
       return;
     }
@@ -39,7 +41,7 @@ export default function App() {
     return null;
   }
 
-  function isBoardFull(squares) {
+  const isBoardFull = squares => {
     for (let i = 0; i < squares.length; i++) {
       if (squares[i] == null) {
         return false;
@@ -49,13 +51,13 @@ export default function App() {
   }
 
 
-  function getStatus() {
+  const getStatus = () => {
     if (winner) {
       return "Winner: " + winner;
     } else if (isBoardFull(squares)) {
-      return "Draw!";
+      return "Draw";
     } else {
-      return "Next player: " + (isCurrentlyX ? "X" : "O");
+      return "Current player: " + (isCurrentlyX ? "X" : "O");
     }
   }
 
@@ -68,6 +70,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+     <Header status={getStatus()}/> 
       <View style={styles.game}>
           <View style={styles.boardRow}>
             {renderSquare(0)}
@@ -84,18 +87,8 @@ export default function App() {
             {renderSquare(7)}
             {renderSquare(8)}
           </View>
-
-          <View style={{ display: 'flex', justifyContent: "center", alignItems: 'center'}}>
-            <Text>{getStatus()}</Text>
-          </View>
-
-          <View style={{ display: 'flex', justifyContent: "center", alignItems: 'center'}}>
-            <TouchableOpacity style={{ height: 20, marginTop: 10, width: 100,justifyContent:'center', alignItems:'center', backgroundColor: 'red' }}>
-              <Text onPress={restart}>Restart</Text> 
-            </TouchableOpacity>
-          </View>
+        <RejectionButton restart={restart}/> 
       </View>
-
     </View>
   );
 }
@@ -103,7 +96,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    flexDirection: 'row', 
+    flexDirection: 'column', 
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%'
@@ -120,10 +113,15 @@ const styles = StyleSheet.create({
     marginTop: '20px',
     width: '30%',
     color: 'red'
-  }
+  },
+  restartButton: { 
+    height: 20,
+    marginTop: 10,
+    width: 100,
+    justifyContent:'center', 
+    alignItems:'center', 
+    backgroundColor: 'red' 
+  },
 
 
 });
-
-
-const testTap = () => alert('valar');
