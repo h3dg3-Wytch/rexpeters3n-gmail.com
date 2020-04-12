@@ -1,5 +1,4 @@
-export const reset = dispatch => dispatch({ type: 'reset'});
+export const reset = () => ({ type: 'reset'});
 
-export const ticTacToeAction = (dispatch, index, winner)=> {
-  dispatch({ type: 'click', payload: {index, winner} })
-}
+export const ticTacToeAction = (index, winner) => 
+  ({type: 'click', payload: {index, winner} })
