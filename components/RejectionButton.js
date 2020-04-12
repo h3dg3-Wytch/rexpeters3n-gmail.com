@@ -2,11 +2,11 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
 
-function RejectionButton({ restart }) {
+function RejectionButton({ reset }) {
   return (
     <View style={styles.rejectContainer}>
             <TouchableOpacity style={styles.rejectButton}>
-              <Text onPress={restart}>Restart</Text> 
+              <Text onPress={reset}>Restart</Text> 
             </TouchableOpacity>
     </View>
   );
