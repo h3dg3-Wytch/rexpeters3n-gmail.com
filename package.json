@@ -5,10 +5,11 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "node ./node_modules/jest-expo/bin/jest.js"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "jest-expo"
   },
   "dependencies": {
     "expo": "~37.0.3",
@@ -18,8 +19,10 @@
     "react-native-web": "~0.11.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
     "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "jest-expo": "^37.0.0",
+    "react-test-renderer": "^16.13.1"
   },
   "private": true
 }
