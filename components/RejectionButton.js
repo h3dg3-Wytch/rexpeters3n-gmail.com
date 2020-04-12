@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
       justifyContent:'center', 
       alignItems:'center', 
       backgroundColor: 'red', 
-      borderRadius: '24px' },
+      borderRadius: 24 
+    },
     rejectContainer: {
       display: 'flex', 
       justifyContent: "center", 

@@ -99,10 +99,10 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%'
+    height: '100%',
   },
   game: {
-    marginTop: '10px',
+    marginTop: 10,
     display: 'flex',
     flexDirection: 'column'
   },
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   gameStatus: {
-    marginTop: '20px',
+    marginTop: 20,
     width: '30%',
     color: 'red'
   },

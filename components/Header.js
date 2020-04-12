@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center', 
     alignItems: 'center',
-    marginBottom: '4px',
+    marginBottom: 4,
   },
   headerText: {
-    fontSize: '40px'
+    fontSize:40 
   }
 });
 

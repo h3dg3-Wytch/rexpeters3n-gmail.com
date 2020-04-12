@@ -15,15 +15,15 @@ const styles = StyleSheet.create({
     square: {
        backgroundColor: '#add8e6',
        padding: 10,
-       width: '136px',
-       height: '136px',
-       margin: '4px',
+       width: 120,
+       height: 120,
+       margin: 4,
        display: 'flex',
        justifyContent: 'center',
        alignItems: 'center',
     },
     squareText: {
-        fontSize: '40px',
+        fontSize: 40,
     }
 });
 export default Square;
