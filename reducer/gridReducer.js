@@ -54,8 +54,8 @@ export const getWinner = squares => {
     } else if (isBoardFull) {
       return "Draw";
     } else {
-      return "Current player: " + (isCurrentlyX ? "X" : "O");
+      return "Current player: " + getCurrentSymbol(isCurrentlyX);
     }
   }
 
-  export const getCurrentSymbol = isCurrentlyX => isCurrentlyX ? 'X' : '0';
+  export const getCurrentSymbol = isCurrentlyX => isCurrentlyX ? 'X' : 'O';
