@@ -37,7 +37,7 @@ describe('Reducer', () =>  {
           null, null, 'X'
         ],
         isCurrentlyX: false
-      }
+    };
 
     it('matches initialState', () => {
         expect(reducer(initialState, { type: 'foo' } )).toEqual(defaultState);

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Square /> has 1 child 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#add8e6",
+      "display": "flex",
+      "height": 120,
+      "justifyContent": "center",
+      "margin": 4,
+      "opacity": 1,
+      "padding": 10,
+      "width": 120,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 40,
+      }
+    }
+  />
+</View>
+`;
