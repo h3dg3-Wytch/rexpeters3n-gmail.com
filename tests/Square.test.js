@@ -1,20 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import { shallow } from 'enzyme';
+
 import Square from '../components/Square';
 
-import { Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
-describe('<Square />', () => {
-  it('has 1 child', () => {
-    const tree = renderer.create(<Square/>).toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(tree.children.length).toBe(1);
-  });
+
+
+describe.only('<Square />', () => {
 
   it('can take the value X', () => {
-    const testInstance = renderer.create(<Square value={'X'}/>).toJSON();
-    expect(testInstance.children[0].children[0]).toEqual('X');
+      const onPressEvent = jest.fn();
+      onPressEvent.mockReturnValue('Pressed');
+      const component = shallow(<Square value={'X'} onPress={onPressEvent} />);
+      expect(component.find(Text).first().props().children).toEqual('X');
+      component.find(TouchableOpacity).first().props().onPress();
+      expect(onPressEvent.mock.calls.length).toBe(1);
   });
 
-});
+}); 

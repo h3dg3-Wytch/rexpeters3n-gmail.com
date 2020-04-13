@@ -1,19 +1,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import { shallow } from 'enzyme';
 
 import { Header } from 'react-native/Libraries/NewAppScreen';
 
-describe('<Header />', () => {
-  it('has 1 child', () => {
-    const tree = renderer.create(<Header/>).toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(tree.children.length).toBe(1);
-  });
+import { Text, TouchableOpacity } from 'react-native';
 
-  it('can take the status ', () => {
-    const testInstance = renderer.create(<Header status={'foo'}/>).toJSON();
-    expect(testInstance.children[0].children[0]).toEqual('foo');
-  });
+describe('<Header />', () => {
+
+    it('can take the value X', () => {
+        const component = shallow(<RejectionButton status={'Winner'} />);
+        expect(component.find(Text).first().props().children).toEqual('Winner');
+    });
+ 
 
 });
