@@ -12,7 +12,6 @@ describe('<RejectionButton />', () => {
     const onPressEvent = jest.fn();
       onPressEvent.mockReturnValue('Pressed');
       const component = shallow(<RejectionButton reset={onPressEvent} />);
-      console.log(component.find(Text).first().props());
       component.find(Text).first().props().onPress();
       expect(onPressEvent.mock.calls.length).toBe(1);
   });
