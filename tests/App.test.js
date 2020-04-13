@@ -3,10 +3,16 @@ import renderer from 'react-test-renderer';
 
 import App from '../App';
 
+import { shallow } from 'enzyme';
+
+import { initialState } from '../reducer/gridReducer';
+
 describe('<App />', () => {
-  it('has 2 children', () => {
-    const tree = renderer.create(<App />).toJSON();
-    expect(tree).toMatchSnapshot();
-    expect(tree.children.length).toBe(2);
+
+  it('can render', () => {
+    const component = shallow(<App />);
+    expect(component.exists()).toEqual(true);
+
   });
+  
 });
