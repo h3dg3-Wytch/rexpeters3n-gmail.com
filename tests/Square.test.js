@@ -7,10 +7,7 @@ import Square from '../components/Square';
 
 import { Text, TouchableOpacity } from 'react-native';
 
-
-
-describe.only('<Square />', () => {
-
+describe('<Square />', () => {
   it('can take the value X', () => {
       const onPressEvent = jest.fn();
       onPressEvent.mockReturnValue('Pressed');
@@ -19,5 +16,4 @@ describe.only('<Square />', () => {
       component.find(TouchableOpacity).first().props().onPress();
       expect(onPressEvent.mock.calls.length).toBe(1);
   });
-
 }); 
